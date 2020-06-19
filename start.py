@@ -9,19 +9,14 @@ def main():
         "Command line state" started!
         Enter command line: add
         state: {'state': 'command', 'command': 'add'}
-
         Enter command line: add param
         state: {'state': 'command with params', 'command': 'add', 'command_params': 'param'}
-
         Enter command line: add param -c
         state: {'state': 'command with params and key', 'command': 'add', 'command_params': 'param', 'key': '-c'}
-
         Enter command line: add param -a key_param
         state: {'state': 'command with params and key with params', 'command': 'add', 'command_params': 'param', 'key': '-a', 'key_params': 'key_param'}
-
         Enter command line:
         state: {'state': 'empty state'}
-
         Enter command line: exit
         End.
     """
@@ -38,7 +33,6 @@ def main():
             print(f'state: {program.get_state()}')
         except CommandLineException as e:
             print(f'error: {e}')
-        print()
 
 
 if __name__ == '__main__':
