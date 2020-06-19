@@ -6,5 +6,5 @@ class CommandWithParamsState(StateABC):
         return {
             'state': 'command with params',
             'command': self._args[0],
-            'command_params': self._args[1]
+            'command_params': self._stringify_difficult_param(self._args[1])
         }
