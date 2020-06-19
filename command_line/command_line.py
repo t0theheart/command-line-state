@@ -50,7 +50,7 @@ class CommandLine(CommandLineABC):
             else:
                 self._state = CommandState(args=self._command_args)
         else:
-            raise command_line_is_not_valid
+            self._state = EmptyState(args=[])
 
     def _validate_first_arg(self):
         command = self._command_args[0]

@@ -5,6 +5,12 @@ from command_line.exception import CommandLineException
 
 class TestCommandLine(unittest.TestCase):
 
+    def test_empty(self):
+        program = CommandLine()
+        program.parse_command_line('')
+        state = program.get_state()
+        self.assertEqual(state['state'], 'empty state')
+
     def test_command(self):
         program = CommandLine()
         program.parse_command_line('add')
